@@ -1,132 +1,199 @@
-<!DOCTYPE html>
-<html class="no-js">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Pushpak ❤️ Drishya - 05.07.2026</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+;(function () {
 
-<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet'>
-<link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Engagement">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia+Sans+Condensed">
+	'use strict';
 
-<link rel="stylesheet" href="css/bootstrap.css">
-<link rel="stylesheet" href="css/style.css">
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.css'>
+	// ===== SAFE FALLBACKS (prevent crashes if plugins missing) =====
+	$.fn.waypoint = $.fn.waypoint || function() { return this; };
+	$.fn.countTo = $.fn.countTo || function() { return this; };
+	$.fn.owlCarousel = $.fn.owlCarousel || function() { return this; };
+	$.fn.magnificPopup = $.fn.magnificPopup || function() { return this; };
+	$.fn.stellar = $.fn.stellar || function() { return this; };
 
-<script src="js/modernizr-2.6.2.min.js"></script>
-</head>
+	// ===== LOADER =====
+	var loaderPage = function() {
+		$(".fh5co-loader").fadeOut("slow");
+	};
 
-<body>
+	// ===== ANIMATION ON SCROLL =====
+	var contentWayPoint = function() {
+		var i = 0;
+		$('.animate-box').waypoint(function(direction) {
 
-<div class="fh5co-loader"></div>
+			if(direction === 'down' && !$(this.element).hasClass('animated-fast')) {
+				
+				i++;
 
-<div id="page">
+				$(this.element).addClass('item-animate');
+				setTimeout(function(){
 
-<!-- HERO -->
-<header id="fh5co-header" class="fh5co-cover" style="background-image:url(images/bg.jpg);">
-  <div class="overlay"></div>
-  <div class="container text-center">
-    <div class="display-t">
-      <div class="display-tc">
-        <h1>Pushpak & Drishya</h1>
-        <h2>05 July 2026</h2>
+					$('body .animate-box.item-animate').each(function(k){
+						var el = $(this);
+						setTimeout(function () {
+							var effect = el.data('animate-effect');
+							if (effect === 'fadeIn') {
+								el.addClass('fadeIn animated-fast');
+							} else if (effect === 'fadeInLeft') {
+								el.addClass('fadeInLeft animated-fast');
+							} else if (effect === 'fadeInRight') {
+								el.addClass('fadeInRight animated-fast');
+							} else {
+								el.addClass('fadeInUp animated-fast');
+							}
 
-        <div class="clock"></div>
+							el.removeClass('item-animate');
+						},  k * 200);
+					});
+					
+				}, 100);
+				
+			}
 
-        <img src="images/couple-img.png" class="couple-img">
+		}, { offset: '85%' });
+	};
 
-        <p><a href="#fh5co-event" class="btn btn-default">Save the Date</a></p>
-      </div>
-    </div>
-  </div>
-</header>
+	// ===== DROPDOWN =====
+	var dropdown = function() {
 
-<!-- EVENTS -->
-<div id="fh5co-event" class="fh5co-bg fh5co-section">
-  <div class="container text-center">
-    <h2>Wedding Events</h2>
+		$('.has-dropdown').mouseenter(function(){
 
-    <div class="row">
-      <div class="col-md-6">
-        <div class="event-wrap">
-          <h3>Engagement</h3>
-          <p>July 4, 2026</p>
-        </div>
-      </div>
+			var $this = $(this);
+			$this.find('.dropdown').css('display', 'block');
+			setTimeout(function(){
+				$this.find('.dropdown').addClass('animated-fast fadeInUpMenu');
+			}, 100);
 
-      <div class="col-md-6">
-        <div class="event-wrap">
-          <h3>Wedding Ceremony</h3>
-          <p>July 5, 2026</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+		}).mouseleave(function(){
 
-<!-- COUPLE -->
-<div id="fh5co-couple" class="fh5co-section">
-  <div class="container text-center">
-    <h2>The Couple</h2>
+			var $this = $(this);
+			$this.find('.dropdown').css('display', 'none');
+			$this.find('.dropdown').removeClass('animated-fast fadeInUpMenu');
+		});
 
-    <div class="row">
-      <div class="col-md-6">
-        <h3>Pushpak</h3>
-      </div>
+	};
 
-      <div class="col-md-6">
-        <h3>Drishya</h3>
-      </div>
-    </div>
-  </div>
-</div>
+	// ===== COUNTER (SAFE) =====
+	var counter = function() {
+		$('.js-counter').each(function(){
+			var $this = $(this);
 
-<!-- STORY -->
-<div id="fh5co-couple-story" class="fh5co-section">
-  <div class="container text-center">
-    <h2>Our Story</h2>
+			// fallback if plugin missing
+			if (typeof $this.countTo === "function") {
+				$this.countTo({
+					from: 0,
+					to: $this.data('to'),
+					speed: 2000,
+					refreshInterval: 50
+				});
+			} else {
+				// simple fallback
+				$this.text($this.data('to'));
+			}
+		});
+	};
 
-    <ul class="timeline">
-      <li>
-        <div class="timeline-panel">
-          <h3>First Meet</h3>
-          <p>Our story began...</p>
-        </div>
-      </li>
+	var counterWayPoint = function() {
+		if ($('#fh5co-counter').length > 0 ) {
+			$('#fh5co-counter').waypoint( function(direction) {
 
-      <li class="timeline-inverted">
-        <div class="timeline-panel">
-          <h3>Fell in Love</h3>
-          <p>And everything changed...</p>
-        </div>
-      </li>
-    </ul>
-  </div>
-</div>
+				if( direction === 'down' && !$(this.element).hasClass('animated') ) {
+					setTimeout(counter, 400);
+					$(this.element).addClass('animated');
+				}
 
-<!-- GALLERY -->
-<div id="fh5co-gallery" class="fh5co-section">
-  <div class="container text-center">
-    <h2>Gallery</h2>
+			} , { offset: '90%' } );
+		}
+	};
 
-    <ul id="fh5co-gallery-list">
-      <li class="one-third" style="background-image: url(images/img1.jpg);"></li>
-      <li class="one-third" style="background-image: url(images/img2.jpg);"></li>
-      <li class="one-third" style="background-image: url(images/img3.jpg);"></li>
-    </ul>
-  </div>
-</div>
+	// ===== MOBILE MENU =====
+	var mobileMenuOutsideClick = function() {
 
-</div>
+		$(document).click(function (e) {
+			var container = $("#fh5co-offcanvas, .js-fh5co-nav-toggle");
 
-<!-- JS -->
-<script src="js/jquery.min.js"></script>
-<script src="https://momentjs.com/downloads/moment.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.js"></script>
-<script src="js/clock.js"></script>
-<script src="js/main.js"></script>
+			if (!container.is(e.target) && container.has(e.target).length === 0) {
 
-</body>
-</html>
+				if ( $('body').hasClass('offcanvas') ) {
+
+					$('body').removeClass('offcanvas');
+					$('.js-fh5co-nav-toggle').removeClass('active');
+
+				}
+			
+			}
+		});
+
+	};
+
+	var offcanvasMenu = function() {
+
+		$('#page').prepend('<div id="fh5co-offcanvas" />');
+		$('#page').prepend('<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>');
+
+		$('.menu-1 > ul, .menu-2 > ul').clone().appendTo('#fh5co-offcanvas');
+
+		$('#fh5co-offcanvas .has-dropdown').addClass('offcanvas-has-dropdown');
+		$('#fh5co-offcanvas')
+			.find('li')
+			.removeClass('has-dropdown');
+
+		$('.offcanvas-has-dropdown').mouseenter(function(){
+			var $this = $(this);
+
+			$this
+				.addClass('active')
+				.find('ul')
+				.slideDown(500, 'easeOutExpo');				
+		}).mouseleave(function(){
+
+			var $this = $(this);
+			$this
+				.removeClass('active')
+				.find('ul')
+				.slideUp(500, 'easeOutExpo');				
+		});
+
+		$(window).resize(function(){
+
+			if ( $('body').hasClass('offcanvas') ) {
+
+				$('body').removeClass('offcanvas');
+				$('.js-fh5co-nav-toggle').removeClass('active');
+
+			}
+		});
+
+	};
+
+	var burgerMenu = function() {
+
+		$('body').on('click', '.js-fh5co-nav-toggle', function(event){
+
+			var $this = $(this);
+
+			if ( $('body').hasClass('overflow offcanvas') ) {
+				$('body').removeClass('overflow offcanvas');
+			} else {
+				$('body').addClass('overflow offcanvas');
+			}
+			$this.toggleClass('active');
+			event.preventDefault();
+
+		});
+
+	};
+
+	// ===== DOCUMENT READY =====
+	$(function(){
+
+		loaderPage();
+		contentWayPoint();
+		dropdown();
+		counter();
+		counterWayPoint();
+		mobileMenuOutsideClick();
+		offcanvasMenu();
+		burgerMenu();
+
+	});
+
+}());
