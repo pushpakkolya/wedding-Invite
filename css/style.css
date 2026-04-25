@@ -1967,5 +1967,10 @@ form label {
         background-size: cover !important;
     }
 }
+.flip-clock-wrapper {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+}
 /*# sourceMappingURL=style.css.map */
 
