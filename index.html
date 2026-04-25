@@ -1,199 +1,166 @@
-;(function () {
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Pushpak ❤️ Drishya - 05.07.2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	'use strict';
+<!-- FONTS -->
+<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet'>
+<link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Engagement">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia+Sans+Condensed">
 
-	// ===== SAFE FALLBACKS (prevent crashes if plugins missing) =====
-	$.fn.waypoint = $.fn.waypoint || function() { return this; };
-	$.fn.countTo = $.fn.countTo || function() { return this; };
-	$.fn.owlCarousel = $.fn.owlCarousel || function() { return this; };
-	$.fn.magnificPopup = $.fn.magnificPopup || function() { return this; };
-	$.fn.stellar = $.fn.stellar || function() { return this; };
+<!-- CSS -->
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.css">
 
-	// ===== LOADER =====
-	var loaderPage = function() {
-		$(".fh5co-loader").fadeOut("slow");
-	};
+<!-- JS (HEAD) -->
+<script src="js/modernizr-2.6.2.min.js"></script>
 
-	// ===== ANIMATION ON SCROLL =====
-	var contentWayPoint = function() {
-		var i = 0;
-		$('.animate-box').waypoint(function(direction) {
+<style>
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
 
-			if(direction === 'down' && !$(this.element).hasClass('animated-fast')) {
-				
-				i++;
+.hero-title {
+  margin-top: 20px;
+  z-index: 2;
+}
 
-				$(this.element).addClass('item-animate');
-				setTimeout(function(){
+.hero-date,
+.hero-quote {
+  z-index: 2;
+}
 
-					$('body .animate-box.item-animate').each(function(k){
-						var el = $(this);
-						setTimeout(function () {
-							var effect = el.data('animate-effect');
-							if (effect === 'fadeIn') {
-								el.addClass('fadeIn animated-fast');
-							} else if (effect === 'fadeInLeft') {
-								el.addClass('fadeInLeft animated-fast');
-							} else if (effect === 'fadeInRight') {
-								el.addClass('fadeInRight animated-fast');
-							} else {
-								el.addClass('fadeInUp animated-fast');
-							}
+.flipTimebox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
 
-							el.removeClass('item-animate');
-						},  k * 200);
-					});
-					
-				}, 100);
-				
-			}
+.clock-wrapper {
+  transform: scale(0.75);
+  transform-origin: center;
+}
 
-		}, { offset: '85%' });
-	};
+.couple-img {
+  width: 160px;
+  margin-top: 10px;
+  position: relative;
+  z-index: 1;
+}
 
-	// ===== DROPDOWN =====
-	var dropdown = function() {
+.hero-btn {
+  margin-top: 10px;
+}
 
-		$('.has-dropdown').mouseenter(function(){
+@media (max-width: 768px) {
+  .clock-wrapper {
+    transform: scale(0.6);
+  }
 
-			var $this = $(this);
-			$this.find('.dropdown').css('display', 'block');
-			setTimeout(function(){
-				$this.find('.dropdown').addClass('animated-fast fadeInUpMenu');
-			}, 100);
+  .couple-img {
+    width: 130px;
+  }
 
-		}).mouseleave(function(){
+  .hero-title {
+    font-size: 26px;
+  }
+}
+</style>
 
-			var $this = $(this);
-			$this.find('.dropdown').css('display', 'none');
-			$this.find('.dropdown').removeClass('animated-fast fadeInUpMenu');
-		});
+</head>
 
-	};
+<body>
 
-	// ===== COUNTER (SAFE) =====
-	var counter = function() {
-		$('.js-counter').each(function(){
-			var $this = $(this);
+<div class="fh5co-loader"></div>
 
-			// fallback if plugin missing
-			if (typeof $this.countTo === "function") {
-				$this.countTo({
-					from: 0,
-					to: $this.data('to'),
-					speed: 2000,
-					refreshInterval: 50
-				});
-			} else {
-				// simple fallback
-				$this.text($this.data('to'));
-			}
-		});
-	};
+<div id="page">
 
-	var counterWayPoint = function() {
-		if ($('#fh5co-counter').length > 0 ) {
-			$('#fh5co-counter').waypoint( function(direction) {
+<header id="fh5co-header" class="fh5co-cover" style="background-image:url(images/bg.jpg);">
+  <div class="overlay"></div>
 
-				if( direction === 'down' && !$(this.element).hasClass('animated') ) {
-					setTimeout(counter, 400);
-					$(this.element).addClass('animated');
-				}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 text-center">
 
-			} , { offset: '90%' } );
-		}
-	};
+        <div class="display-t">
+          <div class="display-tc hero-content">
 
-	// ===== MOBILE MENU =====
-	var mobileMenuOutsideClick = function() {
+            <h1 class="hero-title">Pushpak &amp; Drishya</h1>
 
-		$(document).click(function (e) {
-			var container = $("#fh5co-offcanvas, .js-fh5co-nav-toggle");
+            <h2 class="hero-date">05.07.2026</h2>
 
-			if (!container.is(e.target) && container.has(e.target).length === 0) {
+            <p class="hero-quote">
+              "I have found the one whom my soul loves."
+            </p>
 
-				if ( $('body').hasClass('offcanvas') ) {
+            <!-- CLOCK -->
+            <div class="flipTimebox">
+              <div class="clock-wrapper">
+                <div class="clock"></div>
+              </div>
+            </div>
 
-					$('body').removeClass('offcanvas');
-					$('.js-fh5co-nav-toggle').removeClass('active');
+            <!-- IMAGE -->
+            <img src="images/couple-img.png" class="couple-img" alt="couple">
 
-				}
-			
-			}
-		});
+            <a href="#fh5co-event" class="btn btn-default btn-sm hero-btn">
+              Save our date
+            </a>
 
-	};
+          </div>
+        </div>
 
-	var offcanvasMenu = function() {
+      </div>
+    </div>
+  </div>
+</header>
 
-		$('#page').prepend('<div id="fh5co-offcanvas" />');
-		$('#page').prepend('<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>');
+<!-- EVENTS -->
+<div id="fh5co-event" class="fh5co-bg">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="text-center">
+      <h2>Events</h2>
+    </div>
+  </div>
+</div>
 
-		$('.menu-1 > ul, .menu-2 > ul').clone().appendTo('#fh5co-offcanvas');
+</div>
 
-		$('#fh5co-offcanvas .has-dropdown').addClass('offcanvas-has-dropdown');
-		$('#fh5co-offcanvas')
-			.find('li')
-			.removeClass('has-dropdown');
+<!-- ================= JS ================= -->
 
-		$('.offcanvas-has-dropdown').mouseenter(function(){
-			var $this = $(this);
+<!-- jQuery FIRST -->
+<script src="js/jquery.min.js"></script>
 
-			$this
-				.addClass('active')
-				.find('ul')
-				.slideDown(500, 'easeOutExpo');				
-		}).mouseleave(function(){
+<!-- Waypoints (FIX for your error) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
 
-			var $this = $(this);
-			$this
-				.removeClass('active')
-				.find('ul')
-				.slideUp(500, 'easeOutExpo');				
-		});
+<!-- Moment + Timezone (FIX previous error) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.43/moment-timezone-with-data.min.js"></script>
 
-		$(window).resize(function(){
+<!-- FlipClock -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.js"></script>
 
-			if ( $('body').hasClass('offcanvas') ) {
+<!-- Prevent crashes for missing plugins -->
+<script>
+  $.fn.owlCarousel = function() { return this; };
+  $.fn.stellar = function() { return this; };
+  $.fn.magnificPopup = function() { return this; };
+</script>
 
-				$('body').removeClass('offcanvas');
-				$('.js-fh5co-nav-toggle').removeClass('active');
+<!-- Your scripts -->
+<script src="js/clock.js"></script>
+<script src="js/main.js"></script>
 
-			}
-		});
-
-	};
-
-	var burgerMenu = function() {
-
-		$('body').on('click', '.js-fh5co-nav-toggle', function(event){
-
-			var $this = $(this);
-
-			if ( $('body').hasClass('overflow offcanvas') ) {
-				$('body').removeClass('overflow offcanvas');
-			} else {
-				$('body').addClass('overflow offcanvas');
-			}
-			$this.toggleClass('active');
-			event.preventDefault();
-
-		});
-
-	};
-
-	// ===== DOCUMENT READY =====
-	$(function(){
-
-		loaderPage();
-		contentWayPoint();
-		dropdown();
-		counter();
-		counterWayPoint();
-		mobileMenuOutsideClick();
-		offcanvasMenu();
-		burgerMenu();
-
-	});
-
-}());
+</body>
+</html>
