@@ -1896,25 +1896,7 @@ form label {
 
 }
 
-@media (max-width: 768px) {
 
-  .couple-img {
-    max-width: 180px;
-    margin: 20px auto;
-    display: block;
-  }
-
-}
-@media (max-width: 768px) {
-
-  .hero-img, 
-  .couple-img {
-    max-width: 180px;
-    margin: 20px auto;
-    display: block;
-  }
-
-}
 @media (max-width: 768px) {
 
   .simply-countdown > .simply-section {
@@ -1953,6 +1935,30 @@ form label {
     border-radius: 30px;
   }
 
+}
+
+.couple-img {
+  display: block;
+  width: 180px !important;
+  max-width: 80%;
+  margin: 20px auto;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .couple-img {
+    width: 140px !important;
+  }
+}
+
+.couple-img {
+  border: 4px solid rgba(255,255,255,0.7);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.display-tc img {
+  margin-bottom: 10px;
 }
 /*# sourceMappingURL=style.css.map */
 
