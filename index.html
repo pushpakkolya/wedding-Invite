@@ -6,19 +6,21 @@
 <title>Pushpak ❤️ Drishya - 05.07.2026</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!-- FONTS -->
 <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet'>
 <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Engagement">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia+Sans+Condensed">
 
+<!-- CSS -->
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/style.css">
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.css'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.css">
 
+<!-- JS (HEAD) -->
 <script src="js/modernizr-2.6.2.min.js"></script>
 
 <style>
-/* ===== HERO CLEAN LAYOUT ===== */
 .hero-content {
   display: flex;
   flex-direction: column;
@@ -36,7 +38,6 @@
   z-index: 2;
 }
 
-/* CLOCK */
 .flipTimebox {
   width: 100%;
   display: flex;
@@ -49,7 +50,6 @@
   transform-origin: center;
 }
 
-/* IMAGE */
 .couple-img {
   width: 160px;
   margin-top: 10px;
@@ -57,12 +57,10 @@
   z-index: 1;
 }
 
-/* BUTTON */
 .hero-btn {
   margin-top: 10px;
 }
 
-/* MOBILE */
 @media (max-width: 768px) {
   .clock-wrapper {
     transform: scale(0.6);
@@ -111,7 +109,7 @@
               </div>
             </div>
 
-            <!-- IMAGE BELOW CLOCK -->
+            <!-- IMAGE -->
             <img src="images/couple-img.png" class="couple-img" alt="couple">
 
             <a href="#fh5co-event" class="btn btn-default btn-sm hero-btn">
@@ -138,22 +136,29 @@
 
 </div>
 
-<!-- JS -->
+<!-- ================= JS ================= -->
+
+<!-- jQuery FIRST -->
 <script src="js/jquery.min.js"></script>
 
+<!-- Waypoints (FIX for your error) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+
+<!-- Moment + Timezone (FIX previous error) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.43/moment-timezone-with-data.min.js"></script>
+
+<!-- FlipClock -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.js"></script>
+
+<!-- Prevent crashes for missing plugins -->
 <script>
-  // prevent plugin crashes
   $.fn.owlCarousel = function() { return this; };
   $.fn.stellar = function() { return this; };
   $.fn.magnificPopup = function() { return this; };
 </script>
 
-<!-- ✅ FIXED: Correct Moment + Timezone order -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.43/moment-timezone-with-data.min.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.js"></script>
-
+<!-- Your scripts -->
 <script src="js/clock.js"></script>
 <script src="js/main.js"></script>
 
