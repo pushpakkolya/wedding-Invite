@@ -1986,11 +1986,23 @@ form label {
         background-size: cover !important;
     }
 }
-.flip-clock-wrapper {
-    display: flex !important;
-    justify-content: center !important;
-    width: 100% !important;
+
+.flipTimebox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.clock-wrapper {
+  display: flex;
+  justify-content: center;
   align-items: center;
+  width: 100%;
+}
+
+.clock {
+  margin: 0 auto;
 }
 @media (max-width: 768px) {
     .clock {
