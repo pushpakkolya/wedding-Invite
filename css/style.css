@@ -1803,5 +1803,99 @@ form label {
   opacity: 0;
 }
 
+@media (max-width: 768px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Fix container width */
+  .container {
+    width: 100%;
+    padding: 0 16px;
+  }
+
+  /* Headings */
+  h1 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+
+  /* Section spacing */
+  section, .fh5co-section {
+    padding: 60px 15px;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .col-md-4, .col-md-6 {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+}
+@media (max-width: 768px) {
+
+  .btn, .map-btn {
+    padding: 14px 20px;
+    font-size: 1rem;
+    border-radius: 30px;
+    display: inline-block;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .fh5co-heading, 
+  .fh5co-section {
+    text-align: center;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .petals span,
+  .lights span {
+    animation-duration: 20s;
+    opacity: 0.4;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .fh5co-cover {
+    height: auto !important;
+    padding: 100px 20px;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .navbar {
+    padding: 10px 15px;
+  }
+
+}
+
+
 /*# sourceMappingURL=style.css.map */
 
