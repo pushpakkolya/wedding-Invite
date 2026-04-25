@@ -6,76 +6,16 @@
 <title>Pushpak ❤️ Drishya - 05.07.2026</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- FONTS -->
 <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet'>
 <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Engagement">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia+Sans+Condensed">
 
-<!-- CSS -->
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.css'>
 
-<!-- JS (HEAD) -->
 <script src="js/modernizr-2.6.2.min.js"></script>
-
-<style>
-.hero-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-}
-
-.hero-title {
-  margin-top: 20px;
-  z-index: 2;
-}
-
-.hero-date,
-.hero-quote {
-  z-index: 2;
-}
-
-.flipTimebox {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
-}
-
-.clock-wrapper {
-  transform: scale(0.75);
-  transform-origin: center;
-}
-
-.couple-img {
-  width: 160px;
-  margin-top: 10px;
-  position: relative;
-  z-index: 1;
-}
-
-.hero-btn {
-  margin-top: 10px;
-}
-
-@media (max-width: 768px) {
-  .clock-wrapper {
-    transform: scale(0.6);
-  }
-
-  .couple-img {
-    width: 130px;
-  }
-
-  .hero-title {
-    font-size: 26px;
-  }
-}
-</style>
-
 </head>
 
 <body>
@@ -84,81 +24,107 @@
 
 <div id="page">
 
+<!-- HERO -->
 <header id="fh5co-header" class="fh5co-cover" style="background-image:url(images/bg.jpg);">
   <div class="overlay"></div>
+  <div class="container text-center">
+    <div class="display-t">
+      <div class="display-tc">
+        <h1>Pushpak & Drishya</h1>
+        <h2>05 July 2026</h2>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2 text-center">
+        <div class="clock"></div>
 
-        <div class="display-t">
-          <div class="display-tc hero-content">
+        <img src="images/couple-img.png" class="couple-img">
 
-            <h1 class="hero-title">Pushpak &amp; Drishya</h1>
-
-            <h2 class="hero-date">05.07.2026</h2>
-
-            <p class="hero-quote">
-              "I have found the one whom my soul loves."
-            </p>
-
-            <!-- CLOCK -->
-            <div class="flipTimebox">
-              <div class="clock-wrapper">
-                <div class="clock"></div>
-              </div>
-            </div>
-
-            <!-- IMAGE -->
-            <img src="images/couple-img.png" class="couple-img" alt="couple">
-
-            <a href="#fh5co-event" class="btn btn-default btn-sm hero-btn">
-              Save our date
-            </a>
-
-          </div>
-        </div>
-
+        <p><a href="#fh5co-event" class="btn btn-default">Save the Date</a></p>
       </div>
     </div>
   </div>
 </header>
 
 <!-- EVENTS -->
-<div id="fh5co-event" class="fh5co-bg">
-  <div class="overlay"></div>
-  <div class="container">
-    <div class="text-center">
-      <h2>Events</h2>
+<div id="fh5co-event" class="fh5co-bg fh5co-section">
+  <div class="container text-center">
+    <h2>Wedding Events</h2>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="event-wrap">
+          <h3>Engagement</h3>
+          <p>July 4, 2026</p>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="event-wrap">
+          <h3>Wedding Ceremony</h3>
+          <p>July 5, 2026</p>
+        </div>
+      </div>
     </div>
+  </div>
+</div>
+
+<!-- COUPLE -->
+<div id="fh5co-couple" class="fh5co-section">
+  <div class="container text-center">
+    <h2>The Couple</h2>
+
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Pushpak</h3>
+      </div>
+
+      <div class="col-md-6">
+        <h3>Drishya</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STORY -->
+<div id="fh5co-couple-story" class="fh5co-section">
+  <div class="container text-center">
+    <h2>Our Story</h2>
+
+    <ul class="timeline">
+      <li>
+        <div class="timeline-panel">
+          <h3>First Meet</h3>
+          <p>Our story began...</p>
+        </div>
+      </li>
+
+      <li class="timeline-inverted">
+        <div class="timeline-panel">
+          <h3>Fell in Love</h3>
+          <p>And everything changed...</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<div id="fh5co-gallery" class="fh5co-section">
+  <div class="container text-center">
+    <h2>Gallery</h2>
+
+    <ul id="fh5co-gallery-list">
+      <li class="one-third" style="background-image: url(images/img1.jpg);"></li>
+      <li class="one-third" style="background-image: url(images/img2.jpg);"></li>
+      <li class="one-third" style="background-image: url(images/img3.jpg);"></li>
+    </ul>
   </div>
 </div>
 
 </div>
 
-<!-- ================= JS ================= -->
-
-<!-- jQuery FIRST -->
+<!-- JS -->
 <script src="js/jquery.min.js"></script>
-
-<!-- Waypoints (FIX for your error) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
-
-<!-- Moment + Timezone (FIX previous error) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.43/moment-timezone-with-data.min.js"></script>
-
-<!-- FlipClock -->
+<script src="https://momentjs.com/downloads/moment.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.js"></script>
-
-<!-- Prevent crashes for missing plugins -->
-<script>
-  $.fn.owlCarousel = function() { return this; };
-  $.fn.stellar = function() { return this; };
-  $.fn.magnificPopup = function() { return this; };
-</script>
-
-<!-- Your scripts -->
 <script src="js/clock.js"></script>
 <script src="js/main.js"></script>
 
