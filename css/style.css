@@ -1961,5 +1961,11 @@ form label {
   margin-bottom: 10px;
 }
 
+@media (max-width: 768px) {
+    #fh5co-header {
+        background-position: center top !important;
+        background-size: cover !important;
+    }
+}
 /*# sourceMappingURL=style.css.map */
 
