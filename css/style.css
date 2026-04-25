@@ -1896,6 +1896,15 @@ form label {
 
 }
 
+@media (max-width: 768px) {
+
+  .couple-img {
+    max-width: 180px;
+    margin: 20px auto;
+    display: block;
+  }
+
+}
 
 /*# sourceMappingURL=style.css.map */
 
