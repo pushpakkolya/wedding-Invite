@@ -579,6 +579,16 @@ h1, h2, h3, h4, h5, h6, figure {
   left: -14px;
   right: auto;
 }
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url('../images/bg.jpg') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  overflow: hidden;
+}
 
 .timeline-title {
   margin-top: 0;
@@ -591,14 +601,20 @@ h1, h2, h3, h4, h5, h6, figure {
   text-transform: uppercase;
   letter-spacing: 2px;
 }
-.hero-title{
- text-align: center;
+.hero-title {
+  margin-top: 40px;
+  z-index: 3;
+  position: relative;
 }
 .timeline-body > p,
 .timeline-body > ul {
   margin-bottom: 0;
 }
-
+@media (max-width: 768px) {
+  .hero-title {
+    margin-top: 20px;
+  }
+}
 .timeline-body > p + p {
   margin-top: 5px;
 }
@@ -1940,19 +1956,18 @@ form label {
 }
 
 .couple-img {
-  display: block;
-  width: 180px !important;
-  max-width: 80%;
-  margin: 20px auto;
-  border-radius: 50%;
-  object-fit: cover;
-/*    display: flex;*/
-  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 280px;
+  z-index: 2;
 }
 
 @media (max-width: 768px) {
   .couple-img {
-    width: 140px !important;
+    max-width: 200px;
+    bottom: -10px; /* push slightly down */
   }
 }
 
