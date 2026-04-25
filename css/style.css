@@ -584,7 +584,7 @@ h1, h2, h3, h4, h5, h6, figure {
   margin-top: 0;
 }
 
-.date {
+.date,.hero-quote {
   display: block;
   margin-bottom: 20px;
   font-size: 13px;
