@@ -1,0 +1,158 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: 'Playfair Display', serif;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+  height: 100vh;
+  background: url('images/bg.jpg') center/cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 90%;
+}
+
+/* NAMES */
+.names {
+  font-family: 'Great Vibes', cursive;
+  font-size: 48px;
+}
+
+/* COUPLE IMAGE */
+.couple-frame {
+  margin: 20px auto;
+  width: 160px;
+  height: 220px;
+  border-radius: 50% / 60%;
+  overflow: hidden;
+  border: 3px solid #d4af37;
+}
+
+.couple-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* DATE */
+.date {
+  margin-top: 10px;
+}
+
+/* VERSE */
+.verse {
+  margin: 10px 0 20px;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* ================= COUNTDOWN ================= */
+
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(2, 80px);
+  gap: 15px;
+  justify-content: center;
+}
+
+.box {
+  text-align: center;
+}
+
+.value {
+  background: #222;
+  padding: 12px;
+  font-size: 22px;
+  border-radius: 8px;
+}
+
+.box span {
+  display: block;
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+/* ================= CTA ================= */
+
+.cta {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.cta button {
+  padding: 12px 30px;
+  border-radius: 30px;
+  border: none;
+  background: #eee;
+  font-size: 14px;
+}
+
+/* ================= EVENTS ================= */
+
+.events {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.events h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.event-card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  max-width: 350px;
+  margin: auto;
+}
+
+.event-meta {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+iframe {
+  width: 100%;
+  height: 200px;
+  border: none;
+  margin-top: 10px;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+  .names {
+    font-size: 32px;
+  }
+
+  .countdown {
+    grid-template-columns: repeat(2, 70px);
+  }
+
+}
