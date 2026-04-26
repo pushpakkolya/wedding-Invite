@@ -2104,7 +2104,7 @@ form label {
 
   /* Keep FlipClock’s natural layout, just scale it */
   .flip-clock-wrapper {
-    transform: scale(0.65);
+    transform: scale(0.9);
     transform-origin: center;
     margin: 0 auto !important;
     width: max-content !important;
@@ -2129,6 +2129,40 @@ form label {
     color: #fff;
   }
 
+}
+
+/* =========================================
+   FORCE LABELS (WORKS EVEN IF FLIPCLOCK HAS NONE)
+========================================= */
+
+/* Make each block relative */
+.flip-clock-wrapper ul {
+  position: relative;
+}
+
+/* Add labels manually */
+.flip-clock-wrapper ul:nth-child(1)::after {
+  content: "Days";
+}
+.flip-clock-wrapper ul:nth-child(3)::after {
+  content: "Hours";
+}
+.flip-clock-wrapper ul:nth-child(5)::after {
+  content: "Minutes";
+}
+.flip-clock-wrapper ul:nth-child(7)::after {
+  content: "Seconds";
+}
+
+/* Style labels */
+.flip-clock-wrapper ul::after {
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  color: #fff;
+  white-space: nowrap;
 }
 
 /*# sourceMappingURL=style.css.map */
