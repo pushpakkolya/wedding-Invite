@@ -2027,51 +2027,46 @@ form label {
 }
 
 /* =========================================
-   FIX 2: FlipClock layout (mobile)
+   FINAL WORKING FIX: FLIPCLOCK MOBILE CENTER
 ========================================= */
 
 @media (max-width: 768px) {
 
-  /* Center the entire clock */
+  /* Center container */
   .clock {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: 0 auto;
-  }
-
-  /* Force FlipClock wrapper to wrap */
-  .flip-clock-wrapper {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    width: 100% !important;
-    margin: 0 auto !important;
-  }
-
-  /* Each time unit (Days, Hours, etc.) */
-  .flip-clock-wrapper ul {
-    margin: 5px !important;
-  }
-
-  /* Wrap into 2 rows (4 blocks → 2 per row) */
-  .flip-clock-wrapper .flip-clock-divider,
-  .flip-clock-wrapper ul {
-    flex: 0 0 45%;
+    width: 100%;
     text-align: center;
   }
 
-  /* Labels alignment (Days, Hours, etc.) */
+  /* Keep FlipClock inline and centered */
+  .flip-clock-wrapper {
+    display: inline-block !important;
+    margin: 0 auto !important;
+    transform: scale(0.7);
+    transform-origin: center;
+  }
+
+  /* Prevent vertical stacking */
+  .flip-clock-wrapper ul {
+    float: left !important;
+    margin: 2px !important;
+  }
+
+  /* Keep dividers inline */
+  .flip-clock-divider {
+    float: left !important;
+  }
+
+  /* FIX LABELS (this is the key part you’re missing) */
   .flip-clock-divider .flip-clock-label {
-    position: relative !important;
-    top: 0 !important;
-    right: auto !important;
-    left: auto !important;
-    width: 100%;
-    text-align: center !important;
-    font-size: 12px;
-    margin-top: 5px;
+    position: absolute !important;
+    bottom: -18px !important;
+    top: auto !important;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    white-space: nowrap;
+    color: #fff;
   }
 
 }
