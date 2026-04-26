@@ -2094,7 +2094,7 @@ form label {
 
 
 /* =========================================
-   FINAL FIX: FLIPCLOCK → PREMIUM 2x2 GRID
+   FINAL FIX: FLIPCLOCK → PERFECT CENTER + LABELS
 ========================================= */
 
 @media (max-width: 768px) {
@@ -2103,18 +2103,47 @@ form label {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
   }
 
   .flip-clock-wrapper {
-    transform: scale(0.65);
+    display: grid !important;
+    grid-template-columns: repeat(2, auto);
+    gap: 12px 20px;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0.75);
     transform-origin: center;
-    width: auto !important;
+    width: 100% !important;
     margin: 0 auto !important;
   }
 
+  /* Each time block */
+  .flip-clock-wrapper ul {
+    margin: 0 !important;
+  }
+
+  /* Remove the ":" separators (they break layout) */
+  .flip-clock-divider {
+    display: none !important;
+  }
+
+  /* FIX LABELS (Days, Hours, etc.) */
+  .flip-clock-divider .flip-clock-label,
+  .flip-clock-wrapper .flip-clock-label {
+    position: relative !important;
+    top: 0 !important;
+    right: auto !important;
+    left: auto !important;
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 11px;
+    margin-top: 6px;
+    color: #fff;
+  }
+
 }
-
-
 
 /*# sourceMappingURL=style.css.map */
 
