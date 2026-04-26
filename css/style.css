@@ -2225,5 +2225,20 @@ form label {
   background: linear-gradient(to right, transparent, #d4af37, transparent);
   margin: 15px auto;
 }
+
+@media (max-width: 768px) {
+  .hero-card {
+    padding: 25px 20px;
+    margin: 20px;
+  }
+
+  .hero-card h1 {
+    font-size: 32px;
+  }
+
+  .hero-card h2 {
+    font-size: 16px;
+  }
+}
 /*# sourceMappingURL=style.css.map */
 
