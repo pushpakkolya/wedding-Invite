@@ -10,49 +10,40 @@ body {
   font-family: 'Playfair Display', serif;
 }
 
-/* ================= HERO (FIXED BACKGROUND) ================= */
-
+/* HERO */
 .hero {
   position: relative;
   height: 100vh;
   overflow: hidden;
-
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
 }
 
-/* Background image */
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-
   background: url('images/bg.jpg') center center / cover no-repeat;
-
-  transform: scale(1.08);   /* subtle zoom */
-  filter: blur(2px);        /* VERY LIGHT blur */
-
+  transform: scale(1.08);
+  filter: blur(2px);
   z-index: 0;
 }
 
-/* Light overlay (NOT too dark) */
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.25);  /* reduced darkness */
+  background: rgba(0,0,0,0.25);
   z-index: 1;
 }
 
-/* Content stays above */
 .hero-content {
   position: relative;
   z-index: 2;
 }
 
-/* NAMES */
 .names {
   font-family: 'Great Vibes', cursive;
   font-size: 48px;
@@ -74,20 +65,16 @@ body {
   object-fit: cover;
 }
 
-/* DATE */
-.date {
-  margin-top: 10px;
-}
+/* TEXT */
+.date { margin-top: 10px; }
 
-/* VERSE */
 .verse {
   margin: 10px 0 20px;
   font-size: 14px;
   opacity: 0.9;
 }
 
-/* ================= GRID ================= */
-
+/* GRID */
 .countdown {
   display: grid;
   grid-template-columns: repeat(2, 90px);
@@ -95,16 +82,15 @@ body {
   justify-content: center;
 }
 
-/* ================= BOX ================= */
-
+/* BOX */
 .flip-box {
   text-align: center;
 }
 
-/* ================= FLIP CORE ================= */
-
+/* FLIP CORE */
 .flip {
   perspective: 1000px;
+  position: relative;
 }
 
 .card {
@@ -113,14 +99,12 @@ body {
   height: 100px;
 }
 
-/* TOP + BOTTOM STATIC */
-
+/* STATIC (ONLY THESE SHOULD BE VISIBLE) */
 .top, .bottom {
   position: absolute;
   left: 0;
   right: 0;
   height: 50%;
-  overflow: hidden;
   background: #1a1a1a;
   color: #fff;
   font-size: 42px;
@@ -128,6 +112,7 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 10px;
+  backface-visibility: hidden;
 }
 
 .top {
@@ -141,46 +126,42 @@ body {
   border-top: 1px solid #333;
 }
 
-/* FLIP ELEMENTS */
-
+/* HIDE ANIMATION LAYERS BY DEFAULT */
 .flip-top, .flip-bottom {
+  display: none;
+}
+
+/* SHOW ONLY DURING ANIMATION */
+.flip.animate .flip-top,
+.flip.animate .flip-bottom {
+  display: flex;
   position: absolute;
   left: 0;
   right: 0;
   height: 50%;
-  overflow: hidden;
   background: #2a2a2a;
   color: #fff;
   font-size: 42px;
-  display: flex;
-  align-items: center;
   justify-content: center;
   backface-visibility: hidden;
 }
 
-.flip-top {
+.flip.animate .flip-top {
   top: 0;
   transform-origin: bottom;
   border-radius: 10px 10px 0 0;
-}
-
-.flip-bottom {
-  bottom: 0;
-  transform-origin: top;
-  align-items: flex-end;
-  border-radius: 0 0 10px 10px;
-}
-
-/* ================= ANIMATION ================= */
-
-.flip.animate .flip-top {
   animation: flipTop 0.4s ease-in forwards;
 }
 
 .flip.animate .flip-bottom {
+  bottom: 0;
+  transform-origin: top;
+  align-items: flex-end;
+  border-radius: 0 0 10px 10px;
   animation: flipBottom 0.4s ease-out 0.4s forwards;
 }
 
+/* ANIMATION */
 @keyframes flipTop {
   0% { transform: rotateX(0deg); }
   100% { transform: rotateX(-90deg); }
@@ -191,8 +172,7 @@ body {
   100% { transform: rotateX(0deg); }
 }
 
-/* ================= LABEL ================= */
-
+/* LABEL */
 .label {
   margin-top: 6px;
   font-size: 12px;
@@ -202,9 +182,10 @@ body {
   border-radius: 6px;
 }
 
-/* ================= MOBILE ================= */
-
+/* MOBILE */
 @media (max-width: 768px) {
+  .names { font-size: 32px; }
+
   .countdown {
     grid-template-columns: repeat(2, 75px);
   }
@@ -214,14 +195,14 @@ body {
     height: 85px;
   }
 
-  .top, .bottom, .flip-top, .flip-bottom {
+  .top, .bottom,
+  .flip.animate .flip-top,
+  .flip.animate .flip-bottom {
     font-size: 32px;
   }
 }
 
-
-/* ================= CTA ================= */
-
+/* CTA */
 .cta {
   text-align: center;
   padding: 40px 0;
@@ -232,11 +213,9 @@ body {
   border-radius: 30px;
   border: none;
   background: #eee;
-  font-size: 14px;
 }
 
-/* ================= EVENTS ================= */
-
+/* EVENTS */
 .events {
   padding: 40px 20px;
   text-align: center;
@@ -266,18 +245,4 @@ iframe {
   height: 200px;
   border: none;
   margin-top: 10px;
-}
-
-/* ================= MOBILE ================= */
-
-@media (max-width: 768px) {
-
-  .names {
-    font-size: 32px;
-  }
-
-  .countdown {
-    grid-template-columns: repeat(2, 70px);
-  }
-
 }
