@@ -10,23 +10,46 @@ body {
   font-family: 'Playfair Display', serif;
 }
 
-/* ================= HERO ================= */
+/* ================= HERO (UPGRADED BACKGROUND) ================= */
 
 .hero {
-  height: 100vh;
-  background: url('images/bg.jpg') center/cover no-repeat;
   position: relative;
+  height: 100vh;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: #fff;
 }
 
-.overlay {
+/* 🔥 BACKGROUND IMAGE LAYER */
+.hero::before {
+  content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.4);
+
+
+
+  /* KEY EFFECTS */
+  transform: scale(1.15);        /* zoom */
+  filter: blur(6px);             /* blur */
+  
+  z-index: 0;
+}
+
+/* 🔥 DARK OVERLAY (improves text visibility) */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 1;
+}
+
+/* CONTENT ABOVE BACKGROUND */
+.hero-content {
+  position: relative;
+  z-index: 2;
 }
 
 .hero-content {
