@@ -1960,6 +1960,8 @@ form label {
 .display-tc img {
   margin-bottom: 10px;
 }
+
+
 /* =========================================
    FIX 1: Background image centering (mobile)
 ========================================= */
@@ -1974,6 +1976,54 @@ form label {
     background-position: center center !important;
     background-size: cover !important;
   }
+}
+
+/* =========================================
+   FIX 2: FlipClock PERFECT CENTER + 2x2 GRID
+========================================= */
+
+@media (max-width: 768px) {
+
+  /* Center whole block */
+  .clock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* Main wrapper */
+  .flip-clock-wrapper {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center;
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+  /* Each unit (Days, Hours, etc.) */
+  .flip-clock-wrapper ul {
+    flex: 0 0 45%;   /* 2 per row */
+    margin: 6px !important;
+  }
+
+  /* Remove dividers ":" on mobile */
+  .flip-clock-divider {
+    display: none !important;
+  }
+
+  /* Labels */
+  .flip-clock-divider .flip-clock-label {
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100%;
+    text-align: center !important;
+    font-size: 11px;
+    margin-top: 4px;
+  }
+
 }
 
 /* =========================================
