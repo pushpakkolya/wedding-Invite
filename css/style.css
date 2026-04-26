@@ -261,7 +261,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Fix background focus (adjust 50–70% if needed) */
 .fh5co-cover {
-  background-position: 60% center !important;
+  background-position: 60% center !important; 
 }
 
 /* FlipClock mobile fix */
