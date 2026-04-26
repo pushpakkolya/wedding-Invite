@@ -2025,5 +2025,85 @@ form label {
   }
 
 }
+
+/* =========================================
+   FINAL FIX: HERO BACKGROUND (PERFECT CENTER)
+========================================= */
+
+.fh5co-cover {
+  background-position: center center !important;
+  background-size: cover !important;
+}
+
+@media (max-width: 768px) {
+  .fh5co-cover {
+    background-position: center center !important;
+    background-size: cover !important;
+  }
+}
+
+
+/* =========================================
+   FINAL FIX: FLIPCLOCK → PREMIUM 2x2 GRID
+========================================= */
+
+@media (max-width: 768px) {
+
+  /* Center entire block */
+  .clock {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Main wrapper */
+  .flip-clock-wrapper {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    justify-items: center;
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto !important;
+  }
+
+  /* Each time unit block */
+  .flip-clock-wrapper ul {
+    margin: 0 !important;
+    width: 100%;
+  }
+
+  /* REMOVE colon dividers (:) */
+  .flip-clock-divider {
+    display: none !important;
+  }
+
+  /* Make each block look premium */
+  .flip-clock-wrapper ul li a div div.inn {
+    font-size: 20px !important;
+    border-radius: 10px;
+  }
+
+  /* Labels (Days / Hours / etc.) */
+  .flip-clock-divider .flip-clock-label {
+    position: relative !important;
+    top: 0 !important;
+    width: 100%;
+    text-align: center;
+    font-size: 11px;
+    margin-top: 6px;
+    letter-spacing: 1px;
+  }
+
+}
+
+
+/* =========================================
+   OPTIONAL: SLIGHTLY BETTER SPACING (DESKTOP SAFE)
+========================================= */
+
+.flip-clock-wrapper {
+  margin-top: 20px;
+}
 /*# sourceMappingURL=style.css.map */
 
