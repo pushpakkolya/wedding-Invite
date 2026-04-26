@@ -2094,49 +2094,40 @@ form label {
 
 
 /* =========================================
-   FINAL FIX: FLIPCLOCK → PERFECT CENTER + LABELS
+   FINAL FIX: FLIPCLOCK → CENTER + CLEAN LABELS (STABLE)
 ========================================= */
 
 @media (max-width: 768px) {
 
+  /* Center the whole block */
   .clock {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
   }
 
+  /* Keep FlipClock’s natural layout, just scale it */
   .flip-clock-wrapper {
-    display: grid !important;
-    grid-template-columns: repeat(2, auto);
-    gap: 12px 20px;
-    justify-content: center;
-    align-items: center;
-    transform: scale(0.75);
+    transform: scale(0.65);
     transform-origin: center;
-    width: 100% !important;
     margin: 0 auto !important;
+    width: max-content !important;
   }
 
-  /* Each time block */
+  /* Ensure it stays centered */
   .flip-clock-wrapper ul {
-    margin: 0 !important;
+    float: none !important;
+    display: inline-block !important;
   }
 
-  /* Remove the ":" separators (they break layout) */
-  .flip-clock-divider {
-    display: none !important;
-  }
-
-  /* FIX LABELS (Days, Hours, etc.) */
-  .flip-clock-divider .flip-clock-label,
-  .flip-clock-wrapper .flip-clock-label {
+  /* Fix label visibility */
+  .flip-clock-divider .flip-clock-label {
     position: relative !important;
     top: 0 !important;
     right: auto !important;
     left: auto !important;
     display: block;
-    width: 100%;
     text-align: center;
     font-size: 11px;
     margin-top: 6px;
