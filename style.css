@@ -86,95 +86,140 @@ body {
   opacity: 0.9;
 }
 
-/* ================= COUNTDOWN GRID ================= */
+/* ================= GRID ================= */
 
 .countdown {
   display: grid;
-  grid-template-columns: repeat(2, 80px);
+  grid-template-columns: repeat(2, 90px);
   gap: 20px;
   justify-content: center;
-  margin-top: 20px;
 }
 
-/* EACH UNIT */
+/* ================= BOX ================= */
+
 .flip-box {
   text-align: center;
 }
 
-/* ================= FLIP CARD LOOK ================= */
+/* ================= FLIP CORE ================= */
 
-.flip-card {
+.flip {
+  perspective: 1000px;
+}
+
+.card {
   position: relative;
-  width: 80px;
-  height: 90px;
-
-  font-size: 40px;
-  font-weight: bold;
-  color: #fff;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: linear-gradient(#2c2c2c, #1a1a1a);
-  border-radius: 10px;
-
-  box-shadow:
-    0 6px 15px rgba(0,0,0,0.5),
-    inset 0 -3px 0 rgba(0,0,0,0.4);
+  width: 90px;
+  height: 100px;
 }
 
-/* 🔥 middle split line */
-.flip-card::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 1px;
-  background: rgba(255,255,255,0.15);
-  top: 50%;
-  left: 0;
-}
+/* TOP + BOTTOM STATIC */
 
-/* 🔥 top highlight */
-.flip-card::after {
-  content: "";
+.top, .bottom {
   position: absolute;
-  top: 0;
   left: 0;
   right: 0;
   height: 50%;
-  background: rgba(255,255,255,0.05);
+  overflow: hidden;
+  background: #1a1a1a;
+  color: #fff;
+  font-size: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.top {
+  top: 0;
+  border-bottom: 1px solid #000;
+}
+
+.bottom {
+  bottom: 0;
+  align-items: flex-end;
+  border-top: 1px solid #333;
+}
+
+/* FLIP ELEMENTS */
+
+.flip-top, .flip-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 50%;
+  overflow: hidden;
+  background: #2a2a2a;
+  color: #fff;
+  font-size: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+}
+
+.flip-top {
+  top: 0;
+  transform-origin: bottom;
   border-radius: 10px 10px 0 0;
+}
+
+.flip-bottom {
+  bottom: 0;
+  transform-origin: top;
+  align-items: flex-end;
+  border-radius: 0 0 10px 10px;
+}
+
+/* ================= ANIMATION ================= */
+
+.flip.animate .flip-top {
+  animation: flipTop 0.4s ease-in forwards;
+}
+
+.flip.animate .flip-bottom {
+  animation: flipBottom 0.4s ease-out 0.4s forwards;
+}
+
+@keyframes flipTop {
+  0% { transform: rotateX(0deg); }
+  100% { transform: rotateX(-90deg); }
+}
+
+@keyframes flipBottom {
+  0% { transform: rotateX(90deg); }
+  100% { transform: rotateX(0deg); }
 }
 
 /* ================= LABEL ================= */
 
 .label {
   margin-top: 6px;
-  padding: 4px 10px;
   font-size: 12px;
-
-  background: rgba(255,255,255,0.9);
   color: #555;
-
+  background: #fff;
+  padding: 4px 10px;
   border-radius: 6px;
 }
 
 /* ================= MOBILE ================= */
 
 @media (max-width: 768px) {
-
   .countdown {
-    grid-template-columns: repeat(2, 70px);
+    grid-template-columns: repeat(2, 75px);
   }
 
-  .flip-card {
-    width: 70px;
-    height: 80px;
+  .card {
+    width: 75px;
+    height: 85px;
+  }
+
+  .top, .bottom, .flip-top, .flip-bottom {
     font-size: 32px;
   }
-
 }
+
+
 /* ================= CTA ================= */
 
 .cta {
