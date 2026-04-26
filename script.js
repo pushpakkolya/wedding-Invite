@@ -13,16 +13,21 @@ function updateUnit(id, value) {
 
   if (value === current) return;
 
+  // Set animation values
   flipTop.innerText = current;
   flipBottom.innerText = value;
 
   el.classList.add("animate");
 
+  // 🔥 CHANGE VALUE EXACTLY MID-FLIP
   setTimeout(() => {
     top.innerText = value;
+  }, 200);
+
+  setTimeout(() => {
     bottom.innerText = value;
     el.classList.remove("animate");
-  }, 800);
+  }, 400);
 }
 
 function updateCountdown() {
