@@ -254,3 +254,42 @@ h1, h2, h3, h4, h5, h6 {
 .offcanvas #fh5co-offcanvas {
   transform: translateX(0);
 }
+
+/* =========================================
+   ✅ NEW FIXES (DO NOT REMOVE)
+========================================= */
+
+/* Fix background focus (adjust 50–70% if needed) */
+.fh5co-cover {
+  background-position: 60% center !important;
+}
+
+/* FlipClock mobile fix */
+@media (max-width: 768px) {
+
+  .clock {
+    text-align: center;
+    width: 100%;
+  }
+
+  .flip-clock-wrapper {
+    display: block !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+    transform: scale(0.75);
+    transform-origin: center;
+  }
+
+  .flip-clock-wrapper ul,
+  .flip-clock-divider {
+    display: inline-block !important;
+  }
+
+  .flip-clock-divider .flip-clock-label {
+    position: static !important;
+    display: block;
+    text-align: center;
+    margin-top: 6px;
+    font-size: 12px;
+  }
+}
