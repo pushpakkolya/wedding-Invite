@@ -2008,14 +2008,13 @@ form label {
     margin: 6px !important;
   }
 
-  /* Remove s ":" on mobile */
-  /*.flip-clock- {
+  /* Remove dividers ":" on mobile */
+  .flip-clock-divider {
     display: none !important;
   }
-  */
 
   /* Labels */
-  .flip-clock- .flip-clock-label {
+  .flip-clock-divider .flip-clock-label {
     position: relative !important;
     top: 0 !important;
     left: 0 !important;
@@ -2070,14 +2069,6 @@ form label {
   white-space: nowrap;
 }
 
-  .flip-clock-divider:before {
-  content: ":";
-  font-size: 30px;
-  color: #fff;
-  position: relative;
-  top: 10px;
-}
-
 }
 
 /* =========================================
@@ -2126,7 +2117,7 @@ form label {
   }
 
   /* Fix label visibility */
-  .flip-clock- .flip-clock-label {
+  .flip-clock-divider .flip-clock-label {
     position: relative !important;
     top: 0 !important;
     right: auto !important;
@@ -2141,30 +2132,29 @@ form label {
 }
 
 /* =========================================
-   FINAL FIX: CLEAN LABELS + COLONS (STABLE)
+   FORCE LABELS (WORKS EVEN IF FLIPCLOCK HAS NONE)
 ========================================= */
 
-/* Treat each time block as one unit */
+/* Make each block relative */
 .flip-clock-wrapper ul {
   position: relative;
-  margin-bottom: 20px;
 }
 
-/* Labels mapped correctly (ONLY 4 blocks) */
-.flip-clock-wrapper ul:nth-of-type(1)::after {
+/* Add labels manually */
+.flip-clock-wrapper ul:nth-child(1)::after {
   content: "Days";
 }
-.flip-clock-wrapper ul:nth-of-type(2)::after {
+.flip-clock-wrapper ul:nth-child(3)::after {
   content: "Hours";
 }
-.flip-clock-wrapper ul:nth-of-type(3)::after {
+.flip-clock-wrapper ul:nth-child(5)::after {
   content: "Minutes";
 }
-.flip-clock-wrapper ul:nth-of-type(4)::after {
+.flip-clock-wrapper ul:nth-child(7)::after {
   content: "Seconds";
 }
 
-/* Label styling */
+/* Style labels */
 .flip-clock-wrapper ul::after {
   position: absolute;
   bottom: -18px;
@@ -2173,14 +2163,4 @@ form label {
   font-size: 11px;
   color: #fff;
   white-space: nowrap;
-}
-
-/* Add colon between blocks */
-.flip-clock-wrapper ul:not(:last-of-type)::before {
-  content: ":";
-  position: absolute;
-  right: -10px;
-  top: 35%;
-  font-size: 20px;
-  color: #fff;
 }
