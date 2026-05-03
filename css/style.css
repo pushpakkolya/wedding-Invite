@@ -2008,13 +2008,14 @@ form label {
     margin: 6px !important;
   }
 
-  /* Remove dividers ":" on mobile */
-  .flip-clock-divider {
+  /* Remove s ":" on mobile */
+  /*.flip-clock- {
     display: none !important;
   }
+  */
 
   /* Labels */
-  .flip-clock-divider .flip-clock-label {
+  .flip-clock- .flip-clock-label {
     position: relative !important;
     top: 0 !important;
     left: 0 !important;
@@ -2069,6 +2070,14 @@ form label {
   white-space: nowrap;
 }
 
+  .flip-clock-divider:before {
+  content: ":";
+  font-size: 30px;
+  color: #fff;
+  position: relative;
+  top: 10px;
+}
+
 }
 
 /* =========================================
@@ -2117,7 +2126,7 @@ form label {
   }
 
   /* Fix label visibility */
-  .flip-clock-divider .flip-clock-label {
+  .flip-clock- .flip-clock-label {
     position: relative !important;
     top: 0 !important;
     right: auto !important;
