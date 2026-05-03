@@ -2054,7 +2054,7 @@ form label {
 
   /* Keep dividers inline */
   .flip-clock-divider {
-    float: left !important;
+    float: none !important;
   }
 
 /* FIX LABEL VISIBILITY */
@@ -2163,4 +2163,47 @@ form label {
   font-size: 11px;
   color: #fff;
   white-space: nowrap;
+}
+
+/* =========================================
+   FORCE DESKTOP LAYOUT ON MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  /* Reset FlipClock to desktop behavior */
+  .flip-clock-wrapper {
+    display: block !important;
+    transform: none !important;
+    width: auto !important;
+    margin: 0 auto !important;
+  }
+
+  .flip-clock-wrapper ul {
+    float: left !important;
+    display: block !important;
+    margin: 5px !important;
+  }
+
+  /* Bring back dividers if you want desktop style */
+  .flip-clock-divider {
+    display: block !important;
+  }
+
+  /* Reset labels */
+  .flip-clock-divider .flip-clock-label {
+    position: absolute !important;
+    bottom: -20px !important;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: #fff;
+  }
+
+  /* Remove your custom hacks if needed */
+  .flip-clock-wrapper ul::after,
+  .flip-clock-wrapper ul::before {
+    content: none !important;
+  }
+
 }
