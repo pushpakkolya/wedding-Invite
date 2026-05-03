@@ -2132,29 +2132,29 @@ form label {
 }
 
 /* =========================================
-   FORCE LABELS (WORKS EVEN IF FLIPCLOCK HAS NONE)
+   FORCE LABELS (FIXED — CORRECT TARGETING)
 ========================================= */
 
-/* Make each block relative */
+/* Make each digit group relative */
 .flip-clock-wrapper ul {
   position: relative;
 }
 
-/* Add labels manually */
-.flip-clock-wrapper ul:nth-child(1)::after {
+/* Target ONLY actual time blocks (ignores dividers) */
+.flip-clock-wrapper ul:nth-of-type(1)::after {
   content: "Days";
 }
-.flip-clock-wrapper ul:nth-child(3)::after {
+.flip-clock-wrapper ul:nth-of-type(2)::after {
   content: "Hours";
 }
-.flip-clock-wrapper ul:nth-child(5)::after {
+.flip-clock-wrapper ul:nth-of-type(3)::after {
   content: "Minutes";
 }
-.flip-clock-wrapper ul:nth-child(7)::after {
+.flip-clock-wrapper ul:nth-of-type(4)::after {
   content: "Seconds";
 }
 
-/* Style labels */
+/* Label styling */
 .flip-clock-wrapper ul::after {
   position: absolute;
   bottom: -18px;
@@ -2164,5 +2164,3 @@ form label {
   color: #fff;
   white-space: nowrap;
 }
-
-
