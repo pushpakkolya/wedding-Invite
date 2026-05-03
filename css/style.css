@@ -2141,35 +2141,46 @@ form label {
 }
 
 /* =========================================
-   FORCE LABELS (FINAL FIX — WORKS RELIABLY)
+   FINAL FIX: CLEAN LABELS + COLONS (STABLE)
 ========================================= */
 
-/* Each time unit container */
-.flip-clock-wrapper .flip {
+/* Treat each time block as one unit */
+.flip-clock-wrapper ul {
   position: relative;
+  margin-bottom: 20px;
 }
 
-/* Add labels to each unit */
-.flip-clock-wrapper .flip:nth-child(1)::after {
+/* Labels mapped correctly (ONLY 4 blocks) */
+.flip-clock-wrapper ul:nth-of-type(1)::after {
   content: "Days";
 }
-.flip-clock-wrapper .flip:nth-child(2)::after {
+.flip-clock-wrapper ul:nth-of-type(2)::after {
   content: "Hours";
 }
-.flip-clock-wrapper .flip:nth-child(3)::after {
+.flip-clock-wrapper ul:nth-of-type(3)::after {
   content: "Minutes";
 }
-.flip-clock-wrapper .flip:nth-child(4)::after {
+.flip-clock-wrapper ul:nth-of-type(4)::after {
   content: "Seconds";
 }
 
-/* Style labels */
-.flip-clock-wrapper .flip::after {
+/* Label styling */
+.flip-clock-wrapper ul::after {
   position: absolute;
-  bottom: -20px;
+  bottom: -18px;
   left: 50%;
   transform: translateX(-50%);
   font-size: 11px;
   color: #fff;
   white-space: nowrap;
+}
+
+/* Add colon between blocks */
+.flip-clock-wrapper ul:not(:last-of-type)::before {
+  content: ":";
+  position: absolute;
+  right: -10px;
+  top: 35%;
+  font-size: 20px;
+  color: #fff;
 }
