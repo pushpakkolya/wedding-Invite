@@ -1712,13 +1712,3 @@ form label {
   content: "Seconds";
 }
 
-/* Style labels */
-.flip-clock-wrapper ul::after {
-  position: absolute;
-  bottom: -18px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 11px;
-  color: #fff;
- /* white-space: nowrap; */
-}
