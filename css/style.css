@@ -1712,3 +1712,7 @@ form label {
   content: "Seconds";
 }
 
+/* 🔥 Kill FlipClock's internal labels completely */
+.flip-clock-wrapper .flip-clock-label {
+  display: none !important;
+}
