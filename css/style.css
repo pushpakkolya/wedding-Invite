@@ -1698,29 +1698,11 @@ form label {
   position: relative;
 }
 
-/* Add labels manually */
-.flip-clock-wrapper ul:nth-child(1)::after {
-  content: "Days";
-}
-.flip-clock-wrapper ul:nth-child(3)::after {
-  content: "Hours";
-}
-.flip-clock-wrapper ul:nth-child(5)::after {
-  content: "Minutes";
-}
-.flip-clock-wrapper ul:nth-child(7)::after {
-  content: "Seconds";
-}
+/* =========================================
+   FINAL FIX: FLIPCLOCK → CLEAN LABELS (NO OVERLAP)
+========================================= */
 
-/* Style labels */
-.flip-clock-wrapper ul::after {
-  position: absolute;
-  bottom: -18px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 11px;
-  color: #fff;
-  white-space: nowrap;
+/* Hide default FlipClock labels (the ones appearing behind) */
+.flip-clock-divider .flip-clock-label {
+  display: none !important;
 }
-
-
