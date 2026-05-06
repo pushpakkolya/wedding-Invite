@@ -1722,5 +1722,5 @@ form label {
   transform: translateX(-50%);
   font-size: 11px;
   color: #fff;
-  white-space: nowrap; 
+  white-space: normal; 
 }
