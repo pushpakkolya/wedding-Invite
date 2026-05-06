@@ -1,6 +1,14 @@
 $(document).ready(function() {
   let clock;
 
+  // ✅ Custom labels (clean & official way)
+  FlipClock.Lang.Custom = {
+    days: 'Days',
+    hours: 'Hours',
+    minutes: 'Minutes',
+    seconds: 'Seconds'
+  };
+
   let currentDate = new Date();
   let targetDate = moment.tz("2026-07-05 12:30", "Asia/Kolkata");
 
@@ -8,19 +16,21 @@ $(document).ready(function() {
 
   if (diff <= 0) {
 
-    clock = $(".clock").FlipClock(0, {
+    clock = $(".clock-fix").FlipClock(0, {
       clockFace: "DailyCounter",
       countdown: true,
-      autostart: false
+      language: "Custom",
+      autoStart: false
     });
 
     console.log("Date has already passed!");
 
   } else {
 
-    clock = $(".clock").FlipClock(diff, {
+    clock = $(".clock-fix").FlipClock(diff, {
       clockFace: "DailyCounter",
       countdown: true,
+      language: "Custom",
       callbacks: {
         stop: function() {
           console.log("Timer has ended!");
@@ -28,32 +38,5 @@ $(document).ready(function() {
       }
     });
 
-    /* ✅ ADD THIS BLOCK RIGHT HERE */
-    setTimeout(() => {
-      const setLabel = (selector, text) => {
-        const el = document.querySelector(selector);
-        if (el) el.innerText = text;
-      };
-
-      setLabel('.flip-clock-divider.days .flip-clock-label', 'Days');
-      setLabel('.flip-clock-divider.hours .flip-clock-label', 'Hours');
-      setLabel('.flip-clock-divider.minutes .flip-clock-label', 'Minutes');
-      setLabel('.flip-clock-divider.seconds .flip-clock-label', 'Seconds');
-    }, 300);
-
-    // existing logic
-    setTimeout(function() {
-      checktime();
-    }, 1000);
-
-    function checktime() {
-      let t = clock.getTime();
-      if (t <= 0) {
-        clock.setTime(0);
-      }
-      setTimeout(function() {
-        checktime();
-      }, 1000);
-    }
   }
 });
