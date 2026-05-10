@@ -1887,3 +1887,74 @@ form label {
 
   background: rgba(255,255,255,0.2);
 }
+/* =========================================
+   FINAL BUTTON EFFECTS
+========================================= */
+
+.btn {
+  position: relative;
+  overflow: hidden;
+
+  transition:
+    transform 0.28s ease !important,
+    box-shadow 0.28s ease !important,
+    background 0.3s ease !important;
+}
+
+/* Shine animation layer */
+.btn::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: -140%;
+
+  width: 120%;
+  height: 100%;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.35),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.8s ease;
+
+  z-index: 1;
+}
+
+/* Keep text above shine */
+.btn span,
+.btn i,
+.btn {
+  position: relative;
+  z-index: 2;
+}
+
+/* Hover */
+.btn:hover {
+  transform: translateY(-4px) scale(1.03) !important;
+
+  box-shadow:
+    0 12px 30px rgba(0,0,0,0.22),
+    0 0 18px rgba(255,255,255,0.10) !important;
+}
+
+/* Sweep shine */
+.btn:hover::before {
+  left: 140%;
+}
+
+/* Press effect */
+.btn:active {
+  transform: scale(0.96) !important;
+}
+
+/* Remove ugly outlines */
+.btn:focus,
+.btn:active:focus {
+  outline: none !important;
+}
