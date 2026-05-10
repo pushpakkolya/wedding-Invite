@@ -2075,3 +2075,33 @@ form label {
 .mfp-close {
   display: none !important;
 }
+/* Smooth open/close animation */
+
+.mfp-fade.mfp-bg {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.mfp-fade.mfp-bg.mfp-ready {
+  opacity: 1;
+}
+
+.mfp-fade.mfp-bg.mfp-removing {
+  opacity: 0;
+}
+
+.mfp-fade .mfp-content {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: all 0.3s ease;
+}
+
+.mfp-fade.mfp-ready .mfp-content {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.mfp-fade.mfp-removing .mfp-content {
+  opacity: 0;
+  transform: scale(0.92);
+}
