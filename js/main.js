@@ -266,6 +266,15 @@ if (music && musicBtn) {
         music.play().then(function () {
 
             musicStarted = true;
+			var tapHint = document.getElementById("tap-hint");
+
+if (tapHint) {
+    tapHint.style.opacity = "0";
+
+    setTimeout(function () {
+        tapHint.style.display = "none";
+    }, 400);
+}
 
             musicBtn.style.display = "flex";
             musicBtn.innerHTML = "🔊";
