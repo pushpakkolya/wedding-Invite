@@ -213,7 +213,23 @@
 		$(window).stellar();
 	};
 
-	
+	var imagePopup = function() {
+
+	$('.image-popup').magnificPopup({
+
+		type: 'image',
+
+		closeOnContentClick: true,
+
+		mainClass: 'mfp-fade',
+
+		removalDelay: 300,
+
+		fixedContentPos: true
+
+	});
+
+};
 	$(function(){
 		mobileMenuOutsideClick();
 		parallax();
@@ -226,6 +242,7 @@
 		loaderPage();
 		counter();
 		counterWayPoint();
+		imagePopup();
 // Background Music
 var music = document.getElementById("bg-music");
 var musicBtn = document.getElementById("music-toggle");
