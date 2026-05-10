@@ -270,23 +270,35 @@ Your presence would truly make our day brighter and more meaningful<br> as we st
 
 	<!-- // <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script> -->
 	<script src="js/simplyCountdown.js"></script>
+
 		<script>
-$(document).ready(function() {
+$(document).ready(function () {
 
   $('.image-popup').magnificPopup({
     type: 'image',
 
+    removalDelay: 300,
+
+    mainClass: 'mfp-fade mfp-img-mobile',
+
     closeOnContentClick: true,
     closeBtnInside: false,
-
-    mainClass: 'mfp-fade',
+    fixedContentPos: true,
 
     gallery: {
-      enabled: true
+      enabled: true,
+      navigateByImgClick: true,
+      preload: [0,1]
     },
 
-    image: {
-      verticalFit: true
+    callbacks: {
+      open: function() {
+        $('body').css('overflow', 'hidden');
+      },
+
+      close: function() {
+        $('body').css('overflow', 'auto');
+      }
     }
   });
 
