@@ -1984,3 +1984,67 @@ form label {
 .btn:active:focus {
   outline: none !important;
 }
+/* =========================================
+   IMAGE POPUP STYLING
+========================================= */
+
+/* Background blur */
+.mfp-bg {
+  background: rgba(0,0,0,0.75);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  opacity: 1 !important;
+}
+
+/* Smooth fade animation */
+.mfp-fade.mfp-bg {
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.mfp-fade.mfp-bg.mfp-ready {
+  opacity: 1;
+}
+
+.mfp-fade.mfp-wrap .mfp-content {
+  opacity: 0;
+  transform: scale(0.92);
+
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Image frame */
+.mfp-img {
+  border-radius: 26px;
+
+  border: 2px solid rgba(255,255,255,0.12);
+
+  box-shadow:
+    0 25px 60px rgba(0,0,0,0.45);
+
+  overflow: hidden;
+}
+
+/* Remove ugly white background */
+img.mfp-img {
+  background: transparent;
+}
+
+/* Hide default close button */
+.mfp-close {
+  display: none !important;
+}
+
+/* Mobile spacing */
+.mfp-container {
+  padding: 20px;
+}
