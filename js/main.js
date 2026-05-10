@@ -226,6 +226,54 @@
 		loaderPage();
 		counter();
 		counterWayPoint();
+			// Background Music
+	var music = document.getElementById("bg-music");
+	var musicBtn = document.getElementById("music-toggle");
+
+	if (music) {
+
+		music.volume = 0.35;
+
+		// autoplay immediately
+		var playPromise = music.play();
+
+		if (playPromise !== undefined) {
+
+			playPromise.then(function () {
+
+				// show pause icon since music is already playing
+				musicBtn.innerHTML = "🔊";
+
+			}).catch(function () {
+
+				// autoplay blocked by browser
+				musicBtn.innerHTML = "♫";
+
+				document.addEventListener("click", function () {
+					music.play();
+					musicBtn.innerHTML = "🔊";
+				}, { once: true });
+
+			});
+		}
+
+		// toggle music
+		musicBtn.addEventListener("click", function () {
+
+			if (music.paused) {
+
+				music.play();
+				musicBtn.innerHTML = "🔊";
+
+			} else {
+
+				music.pause();
+				musicBtn.innerHTML = "🔇";
+
+			}
+
+		});
+	}
 	});
 
 
