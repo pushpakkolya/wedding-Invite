@@ -1993,65 +1993,38 @@ form label {
 
 .mfp-bg {
   background: rgba(0,0,0,0.88) !important;
-
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   opacity: 1 !important;
-
   z-index: 99998 !important;
 }
 
 .mfp-wrap {
-  position: fixed !important;
-  inset: 0 !important;
-
-  width: 100vw !important;
-  height: 100vh !important;
-
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-
   z-index: 99999 !important;
-
-  cursor: pointer;
 }
 
 .mfp-container {
-  width: 100% !important;
-  height: 100% !important;
-
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-
-  padding: 30px !important;
+  padding: 20px !important;
 }
 
 .mfp-content {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-
-  width: auto !important;
-  height: auto !important;
+  text-align: center;
 }
 
 .mfp-content img {
-  display: block !important;
-
-  width: auto !important;
-  height: auto !important;
+  display: inline-block !important;
 
   max-width: 92vw !important;
   max-height: 90vh !important;
 
-  object-fit: contain !important;
+  width: auto !important;
+  height: auto !important;
 
-  border-radius: 26px;
+  object-fit: contain;
 
-  border: 2px solid rgba(255,255,255,0.16);
+  border-radius: 24px;
+
+  border: 2px solid rgba(255,255,255,0.14);
 
   box-shadow:
     0 25px 80px rgba(0,0,0,0.6),
@@ -2065,7 +2038,7 @@ form label {
 @keyframes popupZoom {
   from {
     opacity: 0;
-    transform: scale(0.88);
+    transform: scale(0.9);
   }
   to {
     opacity: 1;
@@ -2073,43 +2046,21 @@ form label {
   }
 }
 
-/* Hide controls */
+/* Hide buttons */
 
 .mfp-arrow,
-.mfp-counter,
-.mfp-close {
+.mfp-counter {
   display: none !important;
 }
 
-/* Smooth fade */
+/* Close button */
 
-.mfp-fade.mfp-bg {
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.mfp-fade.mfp-bg.mfp-ready {
-  opacity: 1;
-}
-
-.mfp-fade.mfp-bg.mfp-removing {
-  opacity: 0;
-}
-
-.mfp-fade .mfp-content {
-  opacity: 0;
-  transform: scale(0.92);
-  transition: all 0.3s ease;
-}
-
-.mfp-fade.mfp-ready .mfp-content {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.mfp-fade.mfp-removing .mfp-content {
-  opacity: 0;
-  transform: scale(0.92);
+.mfp-close {
+  color: white !important;
+  opacity: 1 !important;
+  font-size: 34px !important;
+  top: 10px !important;
+  right: 10px !important;
 }
 
 /* Mobile */
@@ -2117,7 +2068,7 @@ form label {
 @media screen and (max-width: 768px) {
 
   .mfp-container {
-    padding: 14px !important;
+    padding: 10px !important;
   }
 
   .mfp-content img {
@@ -2125,10 +2076,5 @@ form label {
     max-height: 82vh !important;
 
     border-radius: 18px;
-  }
-
-  .mfp-bg {
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
   }
 }
