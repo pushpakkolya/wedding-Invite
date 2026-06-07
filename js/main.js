@@ -141,19 +141,9 @@
 	};
 
 
-	var testimonialCarousel = function(){
-		var owl = $('.owl-carousel-fullwidth');
-		owl.owlCarousel({
-			items: 1,
-			loop: true,
-			margin: 0,
-			responsiveClass: true,
-			nav: false,
-			dots: true,
-			smartSpeed: 800,
-			autoHeight: true,
-		});
-	};
+var testimonialCarousel = function(){
+  // owl carousel disabled
+};
 
 
 	var goToTop = function() {
@@ -209,19 +199,19 @@
 	};
 
 	// Parallax
-	var parallax = function() {
-		$(window).stellar();
-	};
+var parallax = function() {
+  // Disabled stellar (parallax)
+};	
 
 	
 	$(function(){
 		mobileMenuOutsideClick();
-		parallax();
+		//parallax();
 		offcanvasMenu();
 		burgerMenu();
 		contentWayPoint();
 		dropdown();
-		testimonialCarousel();
+		//testimonialCarousel();
 		goToTop();
 		loaderPage();
 		counter();
