@@ -2174,36 +2174,7 @@ form label {
   flex-wrap: nowrap;
 }
 
-/* each column becomes a small card */
-#dressCodeSection .col-md-6 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-/* reduce event card padding inside dress section only */
-#dressCodeSection .event-wrap {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  padding: 10px 0 !important;
-}
-
-/* image size control */
-#dressCodeSection .event-wrap img {
-  width: 150px;
-  height: 220px;
-
-  object-fit: cover;
-
-  border-radius: 50% / 60%;
-
-  display: block;
-  margin: 0 auto;
-
-  background: transparent !important;
-  box-shadow: none !important;
-}
 
 /* mobile fallback */
 @media screen and (max-width: 768px) {
