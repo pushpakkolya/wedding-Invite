@@ -2189,14 +2189,16 @@ form label {
 
 /* image size control */
 #dressCodeSection .event-wrap img {
-  width: 100%;
-  height: auto;
-  max-height: 220px;
-  object-fit: contain;   /* 👈 key fix */
+  width: 160px;
+  height: 220px;
+
+  object-fit: contain;
+
   display: block;
   margin: 0 auto;
-  border-radius: 12px;   /* keep soft corners, NOT oval cropping */
-  background: #fff;      /* avoids weird empty transparency look */
+
+  background: transparent !important;
+  border-radius: 50% / 60%;  /* 👈 keeps oval shape */
 }
 
 /* mobile fallback */
@@ -2211,6 +2213,14 @@ form label {
 }
 
 #dressCodeBtn {
-  border: 1px solid rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(0,0,0,0.4) !important;
   border-radius: 30px;
+  background: #fff;
+  padding: 8px 18px;
+  transition: 0.3s ease;
+}
+
+#dressCodeBtn:hover {
+  border-color: #000;
+  transform: scale(1.03);
 }
