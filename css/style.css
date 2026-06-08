@@ -2183,16 +2183,20 @@ form label {
 
 /* reduce event card padding inside dress section only */
 #dressCodeSection .event-wrap {
-  padding: 15px;
-  margin-bottom: 0;
+  text-align: center;
+  padding: 12px;
 }
 
 /* image size control */
 #dressCodeSection .event-wrap img {
   width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 12px;
+  height: auto;
+  max-height: 220px;
+  object-fit: contain;   /* 👈 key fix */
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;   /* keep soft corners, NOT oval cropping */
+  background: #fff;      /* avoids weird empty transparency look */
 }
 
 /* mobile fallback */
