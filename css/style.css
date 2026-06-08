@@ -2162,7 +2162,7 @@ form label {
 /* 💒 Optional: keep spacing balanced */
 #fh5co-event .event-wrap {
   display: inline-block;
-  width: 60%;
+  width: 100%;
   max-width: 420px;
 }
 
@@ -2172,7 +2172,7 @@ form label {
   justify-content: center;
   gap: 20px;
   flex-wrap: nowrap;
-  transform: scale(0.60);
+  transform: scale(0.75);
 }
 
 
@@ -2184,7 +2184,7 @@ form label {
   }
 
   #dressCodeSection .col-md-6 {
-    width: 100%;
+    width: 90%;
   }
 }
 
