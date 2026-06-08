@@ -2166,29 +2166,54 @@ form label {
   max-width: 420px;
 }
 
-/* 👗 Dress code compact horizontal layout */
+/* ============================
+   DRESS CODE SECTION ONLY
+============================ */
+
 #dressCodeSection .row {
   display: flex;
   justify-content: center;
+  align-items: stretch;
   gap: 20px;
-  flex-wrap: wrap;   /* IMPORTANT */
-  transform: none;   /* REMOVE scaling */
+  flex-wrap: wrap;
 }
 
-.dress-card {
-  flex: 1 1 220px;
-  max-width: 260px;
+/* override bootstrap columns ONLY inside dress code */
+#dressCodeSection .col-md-4,
+#dressCodeSection .col-md-6 {
+  float: none !important;
+  display: flex;
+  justify-content: center;
 }
 
+/* card sizing */
+#dressCodeSection .dress-card {
+  flex: 1 1 240px;
+  max-width: 280px;
+  width: 100%;
+}
+
+/* desktop: force side-by-side */
+@media screen and (min-width: 769px) {
+  #dressCodeSection .dress-card {
+    flex: 0 0 260px;   /* fixed width cards */
+  }
+
+  #dressCodeSection .row {
+    flex-wrap: nowrap; /* keeps them in one line */
+  }
+}
+
+/* mobile: stack */
 @media screen and (max-width: 768px) {
   #dressCodeSection .row {
     flex-direction: column;
     align-items: center;
   }
 
-  .dress-card {
-    width: 90%;
+  #dressCodeSection .dress-card {
     max-width: 320px;
+    width: 90%;
   }
 }
 
