@@ -2198,7 +2198,7 @@ form label {
   margin: 0 auto;
 
   background: transparent !important;
-  border-radius: 50% / 60%;  /* 👈 keeps oval shape */
+  /*border-radius: 50% / 60%;  /* 👈 keeps oval shape */
 }
 
 /* mobile fallback */
