@@ -2170,7 +2170,7 @@ form label {
 #dressCodeSection .row {
   display: flex;
   justify-content: center;
-  gap: 5px;
+  gap: 20px;
   flex-wrap: nowrap;
   transform: scale(0.60);
 }
