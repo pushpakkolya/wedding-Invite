@@ -311,10 +311,10 @@ if (dressBtn && dressSection) {
     // toggle visibility
     if (dressSection.style.display === "none" || dressSection.style.display === "") {
       dressSection.style.display = "block";
-      dressBtn.innerHTML = "👗 Hide Dress Code";
+      dressBtn.innerHTML = "HIDE DRESS CODE";
     } else {
       dressSection.style.display = "none";
-      dressBtn.innerHTML = "👗 View Dress Code";
+      dressBtn.innerHTML = "DRESS CODE";
     }
 
   });
