@@ -2172,6 +2172,7 @@ form label {
   justify-content: center;
   gap: 20px;
   flex-wrap: nowrap;
+  transform: scale(0.60);
 }
 
 
