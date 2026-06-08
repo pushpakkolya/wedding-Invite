@@ -2171,14 +2171,28 @@ form label {
   display: flex;
   justify-content: center;
   gap: 20px;
-  flex-wrap: nowrap;
-  transform: scale(0.60);
+  flex-wrap: wrap;   /* IMPORTANT */
+  transform: none;   /* REMOVE scaling */
 }
 
+.dress-card {
+  flex: 1 1 220px;
+  max-width: 260px;
+}
 
+@media screen and (max-width: 768px) {
+  #dressCodeSection .row {
+    flex-direction: column;
+    align-items: center;
+  }
 
+  .dress-card {
+    width: 90%;
+    max-width: 320px;
+  }
+}
 
-
+/*Button dress card */
 #dressCodeBtn {
   /*background: #fcc857 !important;*/
   border: 1px solid rgba(0,0,0,0.2) !important;
