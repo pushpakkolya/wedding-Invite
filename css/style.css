@@ -2205,3 +2205,8 @@ form label {
     width: 100%;
   }
 }
+
+#dressCodeBtn {
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 30px;
+}
