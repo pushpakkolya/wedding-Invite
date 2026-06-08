@@ -2177,16 +2177,7 @@ form label {
 
 
 
-/* mobile fallback */
-@media screen and (max-width: 768px) {
-  #dressCodeSection .row {
-    flex-wrap: wrap;
-  }
 
-  #dressCodeSection .col-md-6 {
-    width: 80%;
-  }
-}
 
 #dressCodeBtn {
   /*background: #fcc857 !important;*/
