@@ -2162,7 +2162,7 @@ form label {
 /* 💒 Optional: keep spacing balanced */
 #fh5co-event .event-wrap {
   display: inline-block;
-  width: 65%;
+  width: 90%;
   max-width: 420px;
 }
 
@@ -2187,7 +2187,7 @@ form label {
   }
 
   .dress-card {
-    width: 60%;
+    width: 100%;
     max-width: 320px;
   }
 }
