@@ -2141,3 +2141,27 @@ form label {
     display: none;
   }
 }
+/* 💒 Center ONLY the Events section layout */
+#fh5co-event .col-md-10.col-md-offset-1 {
+  text-align: center;
+}
+
+/* 👇 override bootstrap float behavior ONLY inside events */
+#fh5co-event .col-md-10.col-md-offset-1 .col-md-6 {
+  float: none !important;
+  display: inline-block;
+  vertical-align: top;
+  text-align: left; /* keeps card text normal */
+}
+
+/* 👗 Button row already col-md-12, just ensure it centers nicely */
+#fh5co-event .col-md-12 {
+  text-align: center;
+}
+
+/* 💒 Optional: keep spacing balanced */
+#fh5co-event .event-wrap {
+  display: inline-block;
+  width: 100%;
+  max-width: 420px;
+}
