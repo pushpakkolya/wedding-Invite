@@ -2151,7 +2151,7 @@ form label {
   float: none !important;
   display: inline-block;
   vertical-align: top;
-  text-align: left; /* keeps card text normal */
+  text-align: center; /* keeps card text normal */
 }
 
 /* 👗 Button row already col-md-12, just ensure it centers nicely */
@@ -2162,7 +2162,7 @@ form label {
 /* 💒 Optional: keep spacing balanced */
 #fh5co-event .event-wrap {
   display: inline-block;
-  width: 100%;
+  width: 90%;
   max-width: 420px;
 }
 
@@ -2172,7 +2172,7 @@ form label {
   justify-content: center;
   gap: 20px;
   flex-wrap: nowrap;
-  transform: scale(0.75);
+  transform: scale(0.60);
 }
 
 
@@ -2184,7 +2184,7 @@ form label {
   }
 
   #dressCodeSection .col-md-6 {
-    width: 90%;
+    width: 80%;
   }
 }
 
