@@ -2202,3 +2202,49 @@ form label {
   border-color: #000;
   transform: scale(1.03);
 }
+
+/* 🧾 OUTER BIG RECTANGLE BOX */
+.dresscode-box {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 12px;
+
+  padding: 25px;
+  margin-top: 20px;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* 👕 EACH SIDE (MEN / WOMEN) */
+.dresscode-item {
+  flex: 1;
+  text-align: center;
+}
+
+/* 🏷️ TOP TITLE */
+.dresscode-item h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+/* 🖼️ IMAGE */
+.dresscode-item img {
+  width: 150px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50% / 60%;
+  display: block;
+  margin: 0 auto;
+}
+
+/* 📝 BOTTOM TEXT */
+.dresscode-item p {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #555;
+}
