@@ -301,6 +301,25 @@ if (tapHint) {
 
     });
 
+	//dress code button
+var dressBtn = document.getElementById("dressCodeBtn");
+var dressSection = document.getElementById("dressCodeSection");
+
+if (dressBtn && dressSection) {
+  dressBtn.addEventListener("click", function () {
+
+    // toggle visibility
+    if (dressSection.style.display === "none" || dressSection.style.display === "") {
+      dressSection.style.display = "block";
+      dressBtn.innerHTML = "👗 Hide Dress Code";
+    } else {
+      dressSection.style.display = "none";
+      dressBtn.innerHTML = "👗 View Dress Code";
+    }
+
+  });
+}
+	
     // Mobile-safe triggers
     document.addEventListener("touchstart", startMusic, { once: true });
     document.addEventListener("click", startMusic, { once: true });
