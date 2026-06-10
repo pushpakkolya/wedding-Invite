@@ -4,7 +4,7 @@
   src: url("../fonts/icomoon/icomoon.eot?srf3rx#iefix") format("embedded-opentype"), url("../fonts/icomoon/icomoon.ttf?srf3rx") format("truetype"), url("../fonts/icomoon/icomoon.woff?srf3rx") format("woff"), url("../fonts/icomoon/icomoon.svg?srf3rx#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
-} 
+}  
 @font-face { font-family: Amsterdam; src: url('../fonts/AmsterdamOne.ttf'); } 
 /* =======================================================
 *
@@ -2162,7 +2162,7 @@ form label {
 /* 💒 Optional: keep spacing balanced */
 #fh5co-event .event-wrap {
   display: inline-block;
-  width: 90%;
+  width: 100%;
   max-width: 420px;
 }
 
@@ -2219,8 +2219,8 @@ form label {
 
 .couple-img1 {
   display: flex;
-  width: 60% !important;
-  max-width: 70%;
+  width: 80% !important;
+  max-width: 100%;
   margin: 15px auto;
   border-radius: 50%;
   object-fit: cover;
