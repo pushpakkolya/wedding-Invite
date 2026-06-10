@@ -2160,9 +2160,9 @@ form label {
 }
 
 /* 💒 Optional: keep spacing balanced */
-#fh5co-event .event-wrap1 {
+#fh5co-event .event-wrap {
   display: inline-block;
-  width: 60%;
+  width: 50%;
   max-width: 420px;
 }
 
