@@ -2248,3 +2248,13 @@ form label {
   border-color: #000;
   transform: scale(1.03);
 }
+
+.fh5co-nav .row {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.fh5co-nav .menu-1 {
+  width: auto;
+  padding-right: 0;
+}
