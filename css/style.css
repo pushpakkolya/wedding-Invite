@@ -2251,7 +2251,7 @@ form label {
 
 .fh5co-nav .row {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .fh5co-nav .menu-1 {
